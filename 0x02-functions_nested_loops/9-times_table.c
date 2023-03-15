@@ -1,28 +1,26 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * main - main block
- * Description: Print all possible combinations fo single-digit numbers.
- * Numbers must be separated by commas and a space.
- * You can only use `putchar` to print to console
- * You can only use `putchar` up to four times.
- * You are not allowed to use any variable of type `char`.
- * Return: 0
- */
-int main(void)
+ *times_table - prints the 9 times table
+ *
+ *Return: returns nothing
+*/
+void times_table(void)
 {
-	int i = 0;
-
-	while (i < 10)
-	{
-		putchar(i + '0');
-		if (i < 9)
-		{
-			putchar(44);
-			putchar(32);
-		}
-		i++;
-	}
-	putchar('\n');
-
-	return (0);
+int digit, mult, result;
+for (digit = 0; digit <= 9; digit++)
+{
+_putchar('0');
+for (mult = 1; mult <= 9; mult++)
+{
+_putchar(',');
+_putchar(' ');
+result = digit * mult;
+if (result <= 9)
+_putchar(' ');
+else
+_putchar((result / 10) + '0');
+_putchar((result % 10) + '0');
+}
+_putchar('\n');
+}
 }
